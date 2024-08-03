@@ -1,0 +1,30 @@
+{% include('@mytheme/partials/header.html.twig') %}
+
+<main class="d-flex">
+    <div class="d-flex flex-column mt-5 form-section  justify-content-start">
+        <div class="d-flex flex-column great-text">
+            <span class="c-primary"> Subscribe Now </span>
+            <span class=""> to Our Newsletter </span>
+        </div>
+
+        <div class="mt-4 small-text" >
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni saepe id, exercitationem dolorum quod molestiae, reprehenderit quo corrupti atque non laborum rerum qui libero! Culpa libero quos mollitia nulla deleniti!</p>
+        </div>
+
+        <form class="d-flex flex-column form-register" action="/" method="post">
+            <input type="text" placeholder="Name"  name="name" id="name">
+            <input type="email" placeholder="Email" name="email"  id="email">
+
+            <button type="button bt-form-send"> 
+                <span>Send </span>
+                <svg  xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+                    <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+                </svg>
+            </button>
+        </form>
+
+    </div>
+    <div class="image-section mt-5 ">
+        <img  src="{{ directory }}/assets/qwe.png " width="100%"  class="" alt="im-right" srcset="">
+    </div>
+</main>

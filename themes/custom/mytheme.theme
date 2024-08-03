@@ -1,0 +1,20 @@
+/**
+ * Implements hook_preprocess_HOOK() for page templates.
+ */
+function mytheme_preprocess_page(array &$variables) {
+  // Charge le menu principal pour le rendre disponible dans Twig.
+  $menu_name = 'menu-principal'; // Remplacez par le nom machine de votre menu.
+  $menu_tree = \Drupal::menuTree();
+  $parameters = $menu_tree->getCurrentRouteMenuTreeParameters($menu_name);
+  $tree = $menu_tree->load($menu_name, $parameters);
+  $menu = $menu_tree->build($tree);
+  
+  // Assigne le menu rendu à une variable Twig.
+  $variables['menu_principal'] = [
+    '#theme' => 'menu_tree',
+    '#items' => $menu['#items'],
+    '#attributes' => $menu['#attributes'],
+    '#attached' => $menu['#attached'],
+    '#cache' => $menu['#cache'],
+  ];
+}
